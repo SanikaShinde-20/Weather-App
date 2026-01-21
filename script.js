@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchWeatherInfo(city) {
 
-        const url = https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
         const response = await fetch(url);
 
         console.log("Fetch response:", response);
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Displaying weather info:", displayData);
         const { name, main, weather } = displayData;
         cityName.textContent = name;
-        temperature.textContent = Temperature: ${main.temp} °C;
-        description.textContent = Description: ${weather[0].description};
+        temperature.textContent = `Temperature: ${main.temp} °C`;
+        description.textContent = `Description: ${weather[0].description}`;
         console.log("City Name:", name);
         weatherInfo.classList.remove('hidden');
         weatherInfo.classList.add('visible');
